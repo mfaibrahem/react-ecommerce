@@ -1,0 +1,193 @@
+$main-color: #0189b5;
+$main-color: #00cec9;
+$main-black-color: #474747;
+$secondary-color: #015ba1;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: $main-color;
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: $main-color;
+  color: #fff;
+}
+
+::-webkit-search-results-decoration {
+  background-color: $main-color;
+  color: #fff;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url(../fonts/Montserrat-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: url(../fonts/SourceSansPro-Regular.woff) format('woff');
+}
+
+@mixin bodyFont {
+  font-family: 'Montserrat-Regular';
+  font-weight: normal;
+}
+@mixin headingFont {
+  font-family: 'SourceSansPro-Regular';
+  font-weight: bold;
+}
+
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #f7f8fa;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    background-color: #41403f62;
+    background-color: #41403f28;
+    border-radius: 10px;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-track {
+      // box-shadow: inset 0 0 1px grey;
+      background-color: #f7f8fa;
+    }
+
+    // &::-webkit-scrollbar-thumb {
+    //   background: #ababab;
+    // }
+  }
+}
+
+// custom break points
+@mixin mediaXsm {
+  @media only screen and (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mediaSm {
+  @media only screen and (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin mediaSmd {
+  @media only screen and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin mediaXlg {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mediaXXlg {
+  @media only screen and (min-width: 1400px) {
+    @content;
+  }
+}
+
+// @mixin mediaXXlg {
+//   @media only screen and (min-width: 1600px) {
+//     @content;
+//   }
+// }
+
+.mfa-container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mediaSmd {
+    max-width: 540px;
+  }
+
+  @include mediaMd {
+    max-width: 720px;
+  }
+
+  @include mediaLg {
+    max-width: 960px;
+  }
+
+  @include mediaXlg {
+    max-width: 1140px;
+  }
+
+  @include mediaXXlg {
+    max-width: 1340px;
+  }
+}
+
+body {
+  color: $main-black-color;
+  margin: 0;
+  @include bodyFont;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #f7f8fa;
+
+  // import fonts
+  // @import './css/icons/fontello.css';
+
+  // // import homepage styles
+  // @import '../pages/homepage/home-page';
+
+  // // import directory component styles
+  // @import '../components/directory/directory';
+
+  // // import menu item styles
+  // @import '../components/menu-item/menu-item';
+}

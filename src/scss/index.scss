@@ -1,0 +1,14 @@
+@import './config';
+
+body {
+  color: $main-black-color;
+  margin: 0;
+  @include bodyFont;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #f7f8fa;
+
+  // import fonts
+  // @import './css/icons/fontello.css';
+}
