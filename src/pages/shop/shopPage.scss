@@ -1,0 +1,17 @@
+@import '../../scss/config';
+
+.shopPage {
+  margin-top: 80px;
+  @include mediaLg {
+    margin-top: 110px;
+  }
+
+  .collectionPreviewWrapper {
+    display: grid;
+    grid-gap: 32px;
+
+    @include mediaLg {
+      grid-gap: 52px;
+    }
+  }
+}

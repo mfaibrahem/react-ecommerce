@@ -6,8 +6,10 @@ const HomePage = props => {
   return (
     <>
       <div className="homepage">
-        <div className="mfa-container">
-          <Directory />
+        <div className="mfaContainer">
+          <div className="directoryWrapper">
+            <Directory />
+          </div>
         </div>
       </div>
     </>

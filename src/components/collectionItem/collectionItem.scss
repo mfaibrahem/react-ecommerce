@@ -1,0 +1,38 @@
+@import '../../scss/config';
+
+.collectionItem {
+  display: grid;
+  grid-gap: 10px;
+
+  .imgDiv {
+    display: grid;
+    height: 200px;
+    @include mediaMd {
+      height: 310px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+  .itemData {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 8px;
+    align-items: center;
+    padding: 0 2px;
+
+    .itemName {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      @include mediaLg {
+        font-size: 18px;
+      }
+    }
+  }
+}
