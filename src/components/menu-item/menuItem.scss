@@ -9,12 +9,11 @@
   height: 280px;
   background-color: #fff;
   display: grid;
-  justify-items: center;
-  align-items: center;
   text-align: center;
   overflow: hidden;
   cursor: pointer;
-
+  justify-items: center;
+  align-items: center;
   &.large {
     height: 340px;
   }
@@ -34,6 +33,7 @@
 
   .content {
     // border: 1px solid rgba(#000, 0.1);
+    display: grid;
     background-color: rgba(#fff, 0.8);
     padding: 18px 22px;
     position: relative;
