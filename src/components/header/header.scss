@@ -1,0 +1,39 @@
+@import '../../scss/config';
+
+.header {
+  background-color: #eee;
+  display: grid;
+  .headerWrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 60px;
+    @include mediaLg {
+      height: 80px;
+    }
+    .logoLink {
+      display: grid;
+      align-items: center;
+      height: 50px;
+      @include mediaLg {
+        height: 70px;
+      }
+    }
+    .options {
+      justify-self: end;
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 32px;
+
+      .option {
+        display: grid;
+        align-items: center;
+        @include headingFont;
+
+        &:hover,
+        &.active {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
