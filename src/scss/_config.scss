@@ -1,6 +1,7 @@
 $main-color: #0189b5;
 $main-color: #00cec9;
 $main-black-color: #474747;
+$main-background-color: #f7f8fa;
 $secondary-color: #015ba1;
 
 *,
@@ -73,6 +74,7 @@ ul {
     border-radius: 10px;
     background-color: #f7f8fa;
     background-color: transparent;
+    background-color: #eee;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -85,7 +87,7 @@ ul {
   &:hover {
     &::-webkit-scrollbar-track {
       // box-shadow: inset 0 0 1px grey;
-      background-color: #f7f8fa;
+      // background-color: #f7f8fa;
     }
 
     // &::-webkit-scrollbar-thumb {

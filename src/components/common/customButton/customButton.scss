@@ -1,0 +1,37 @@
+@import '../../../scss/config';
+
+.customButton {
+  letter-spacing: 0.5px;
+  height: 42px;
+  background-color: $main-color;
+  color: #fff;
+  border: 0;
+  text-transform: capitalize;
+  font-size: 14px;
+  @include headingFont;
+  font-weight: normal;
+  line-height: 1;
+  padding: 4px 16px;
+  border-radius: 3px;
+  transition: all 0.25s ease-out;
+  cursor: pointer;
+  i {
+    font-size: 18px;
+    margin-right: 2px;
+  }
+
+  &.googleBtn {
+    background-color: #ea4335;
+  }
+  &.facebookBtn {
+    background-color: #3b5998;
+  }
+
+  &:hover {
+    box-shadow: 0 12px 14px rgba(#000, 0.1);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}

@@ -13,9 +13,12 @@
     .logoLink {
       display: grid;
       align-items: center;
-      height: 50px;
-      @include mediaLg {
-        height: 70px;
+
+      svg {
+        height: 38px;
+        @include mediaLg {
+          height: 54px;
+        }
       }
     }
     .options {
@@ -27,11 +30,15 @@
       .option {
         display: grid;
         align-items: center;
+        border-bottom: 5px solid transparent;
+        cursor: pointer;
         @include headingFont;
+        transition: all 0.25s ease-out;
 
         &:hover,
         &.active {
           color: $main-color;
+          border-color: $main-color;
         }
       }
     }

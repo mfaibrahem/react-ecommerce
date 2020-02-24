@@ -1,0 +1,41 @@
+@import '../../scss/config';
+
+.signinWrapper {
+  display: grid;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 22px 16px;
+  box-shadow: 0 16px 18px rgba(#000, 0.1);
+
+  @include mediaLg {
+    border-radius: 10px;
+    padding: 32px 28px;
+    box-shadow: 0 24px 26px rgba(#000, 0.1);
+  }
+
+  .logoImg {
+    justify-self: center;
+    margin-bottom: 16px;
+    @include mediaLg {
+      margin-bottom: 32px;
+    }
+    svg {
+      height: 70px;
+    }
+  }
+
+  form {
+    .buttonsDiv {
+      display: grid;
+      grid-gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      justify-content: start;
+
+      button {
+        &:nth-of-type(1) {
+          grid-column-end: span 2;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../scss/config';
+
+.signupWrapper {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 22px 16px;
+  box-shadow: 0 16px 18px rgba(#000, 0.1);
+
+  @include mediaLg {
+    border-radius: 10px;
+    padding: 32px 28px;
+    box-shadow: 0 24px 26px rgba(#000, 0.1);
+  }
+
+  form {
+    .customButton {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+}

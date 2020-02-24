@@ -1,10 +1,16 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../../assets/crown.svg.svg';
+import { ReactComponent as Logo } from '../../assets/crown.svg';
 import './header.scss';
 
-const Header = props => {
-  const { location } = props;
+import { auth } from '../../firebase/firebase.utils';
+
+const Header = ({ location, currentUser }) => {
+  // const { location, currentUser } = props;
+
+  const setActive = (currentClass, path) =>
+    `${currentClass} ${location.pathname === path ? 'active' : ''}`;
+
   return (
     <div className="header">
       <div className="mfaContainer">
@@ -14,17 +20,24 @@ const Header = props => {
           </Link>
 
           <div className="options">
-            <Link
-              className={`option ${
-                location.pathname === '/shop' ? 'active' : ''
-              }`}
-              to="shop"
-            >
+            <Link className={setActive('option', '/')} to="/">
+              Home
+            </Link>
+            <Link className={setActive('option', '/shop')} to="/shop">
               SHOP
             </Link>
-            <Link className="option" to="/contact">
+            <Link className={setActive('option', '/contact')} to="/contact">
               CONTACT
             </Link>
+            {currentUser ? (
+              <div className="option" onClick={() => auth.signOut()}>
+                Logout
+              </div>
+            ) : (
+              <Link className={setActive('option', '/signin')} to="/signin">
+                SIGNIN
+              </Link>
+            )}
           </div>
         </div>
       </div>
