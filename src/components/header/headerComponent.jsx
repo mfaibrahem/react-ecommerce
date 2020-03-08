@@ -1,11 +1,15 @@
+import './header.scss';
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../../assets/crown.svg';
-import './header.scss';
+import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 
-const Header = ({ location, currentUser }) => {
+import { ReactComponent as Logo } from '../../assets/crown.svg';
+import CartIcon from '../cartIcon/cartIconComponent';
+import CartDropDown from '../cartDropDown/cartDropDownComponent';
+
+const Header = ({ location, currentUser, hidden }) => {
   // const { location, currentUser } = props;
 
   const setActive = (currentClass, path) =>
@@ -38,6 +42,8 @@ const Header = ({ location, currentUser }) => {
                 SIGNIN
               </Link>
             )}
+            <CartIcon />
+            {hidden ? null : <CartDropDown />}
           </div>
         </div>
       </div>
@@ -45,4 +51,9 @@ const Header = ({ location, currentUser }) => {
   );
 };
 
-export default withRouter(Header);
+const mapStateToProps = ({ user: { currentUser }, cartList: { hidden } }) => ({
+  currentUser: currentUser,
+  hidden: hidden
+});
+
+export default connect(mapStateToProps)(withRouter(Header));

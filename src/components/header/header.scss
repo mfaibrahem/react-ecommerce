@@ -26,6 +26,7 @@
       display: grid;
       grid-auto-flow: column;
       grid-gap: 32px;
+      position: relative;
 
       .option {
         display: grid;

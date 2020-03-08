@@ -17,6 +17,16 @@
       object-fit: cover;
       object-position: center center;
     }
+    position: relative;
+
+    button {
+      position: absolute;
+      bottom: 12px;
+      left: 5%;
+      right: 5%;
+      width: 90%;
+      opacity: 0;
+    }
   }
   .itemData {
     display: grid;
@@ -32,6 +42,17 @@
 
       @include mediaLg {
         font-size: 18px;
+      }
+    }
+  }
+
+  &:hover {
+    .imgDiv {
+      img {
+        opacity: 0.8;
+      }
+      button {
+        opacity: 0.9;
       }
     }
   }

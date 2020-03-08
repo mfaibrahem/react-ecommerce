@@ -26,8 +26,19 @@
   &.facebookBtn {
     background-color: #3b5998;
   }
+  &.inverted {
+    background-color: #fff;
+    color: $main-black-color;
+
+    &:hover {
+      background-color: $main-black-color;
+      color: #fff;
+    }
+  }
 
   &:hover {
+    background-color: #fff;
+    color: $main-black-color;
     box-shadow: 0 12px 14px rgba(#000, 0.1);
   }
 
