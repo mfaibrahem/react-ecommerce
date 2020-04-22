@@ -1,29 +1,33 @@
 @import '../../scss/config';
 
 .cartDropDown {
-  position: absolute;
-  width: 240px;
-  height: 340px;
-  display: grid;
-  align-content: start;
-  padding: 20px;
-  border: 1px solid #272727;
-  background-color: #fff;
-  top: 80px;
-  right: 0;
-  z-index: 5;
+	position: absolute;
+	width: 240px;
+	height: 340px;
+	display: grid;
+	align-content: start;
+	padding: 20px;
+	// border: 1px solid #272727;
+	background-color: #fff;
+	box-shadow: 0 8px 12px rgba(#000, 0.1);
+	top: 80px;
+	right: 0;
+	z-index: 5;
 
-  .cartItems {
-    height: 240px;
-    display: grid;
-    align-content: start;
-    grid-gap: 12px;
-    overflow: auto;
-    @include custom-scrollbar;
-  }
+	.cartItems {
+		height: 240px;
+		display: grid;
+		align-content: start;
+		grid-gap: 12px;
+		overflow: auto;
+		@include custom-scrollbar;
+	}
 
-  button {
-    margin-top: auto;
-    margin-top: 22px;
-  }
+	button {
+		margin-top: auto;
+		margin-top: 22px;
+		&:hover {
+			border: 1px solid rgba(#000, 0.07);
+		}
+	}
 }

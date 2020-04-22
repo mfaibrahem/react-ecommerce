@@ -1,47 +1,52 @@
 @import '../../scss/config';
 
 .header {
-  background-color: #eee;
-  display: grid;
-  .headerWrapper {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    height: 60px;
-    @include mediaLg {
-      height: 80px;
-    }
-    .logoLink {
-      display: grid;
-      align-items: center;
+	background-color: #eee;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	display: grid;
+	.headerWrapper {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		height: 60px;
+		@include mediaLg {
+			height: 80px;
+		}
+		.logoLink {
+			display: grid;
+			align-items: center;
 
-      svg {
-        height: 38px;
-        @include mediaLg {
-          height: 54px;
-        }
-      }
-    }
-    .options {
-      justify-self: end;
-      display: grid;
-      grid-auto-flow: column;
-      grid-gap: 32px;
-      position: relative;
+			svg {
+				height: 38px;
+				@include mediaLg {
+					height: 54px;
+				}
+			}
+		}
+		.options {
+			justify-self: end;
+			display: grid;
+			grid-auto-flow: column;
+			grid-gap: 32px;
+			position: relative;
 
-      .option {
-        display: grid;
-        align-items: center;
-        border-bottom: 5px solid transparent;
-        cursor: pointer;
-        @include headingFont;
-        transition: all 0.25s ease-out;
+			.option {
+				display: grid;
+				align-items: center;
+				border-bottom: 5px solid transparent;
+				cursor: pointer;
+				@include headingFont;
+				transition: all 0.25s ease-out;
 
-        &:hover,
-        &.active {
-          color: $main-color;
-          border-color: $main-color;
-        }
-      }
-    }
-  }
+				&:hover,
+				&.active {
+					color: $main-color;
+					border-color: $main-color;
+				}
+			}
+		}
+	}
 }
